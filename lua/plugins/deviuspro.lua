@@ -1,0 +1,5 @@
+return {
+  {
+    "DeviusVim/deviuspro.nvim",
+  },
+}
