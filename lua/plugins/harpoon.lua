@@ -1,7 +1,7 @@
 return {
   {
     "theprimeagen/harpoon",
-    opts = function(_, opts)
+    opts = function(_, _)
       local mark = require("harpoon.mark")
       local ui = require("harpoon.ui")
 
