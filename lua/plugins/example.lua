@@ -9,15 +9,12 @@ if true then return {} end
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
-
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
-    -- opts = {
-    --   colorscheme = "gruvbox",
-    -- },
+    opts = {
+      colorscheme = "deviuspro",
+    },
   },
 
   -- change trouble config
@@ -30,14 +27,6 @@ return {
   -- disable trouble
   -- { "folke/trouble.nvim", enabled = false },
 
-  -- add symbols-outline
-  --{
-  --  "simrat39/symbols-outline.nvim",
-  --  cmd = "SymbolsOutline",
-  --  keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-  --  config = true,
-  --},
-
   -- override nvim-cmp and add cmp-emoji
   {
     "hrsh7th/nvim-cmp",
@@ -49,20 +38,6 @@ return {
     end,
   },
 
-  -- add pyright to lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
-        pyright = {},
-      },
-    },
-  },
-
-  -- add tsserver and setup with typescript.nvim instead of lspconfig
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -70,7 +45,7 @@ return {
       init = function()
         require("lazyvim.util").on_attach(function(_, buffer)
           -- stylua: ignore
-          vim.keymap.set( "n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
+          vim.keymap.set("n", "<leader>co", "TypescriptOrganizeImports", { buffer = buffer, desc = "Organize Imports" })
           vim.keymap.set("n", "<leader>cR", "TypescriptRenameFile", { desc = "Rename File", buffer = buffer })
         end)
       end,
@@ -79,6 +54,7 @@ return {
     opts = {
       ---@type lspconfig.options
       servers = {
+        pyright = {},
         -- tsserver will be automatically installed with mason and loaded with lspconfig
         tsserver = {},
       },
@@ -187,6 +163,7 @@ return {
       return {}
     end,
   },
+
   -- then: setup supertab in cmp
   {
     "hrsh7th/nvim-cmp",

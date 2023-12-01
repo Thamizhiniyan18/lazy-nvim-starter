@@ -4,6 +4,8 @@ return {
 
     dependencies = {
       "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope-project.nvim",
+
       {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
@@ -100,7 +102,7 @@ return {
           },
         },
 
-        extensions_list = { "themes", "terms", "fzf" },
+        extensions_list = { "themes", "terms", "fzf", "projects" },
         extensions = {
           fzf = {
             fuzzy = true,
@@ -112,14 +114,31 @@ return {
       }
 
       telescope.setup(opts)
-      local builtin = require("telescope.builtin")
+      telescope.load_extension("project")
 
-      vim.keymap.set("n", "<leader>pf", builtin.find_files, {})
-      vim.keymap.set("n", "<C-p>", builtin.git_files, {})
-      vim.keymap.set("n", "<leader>ps", function()
+      local builtin = require("telescope.builtin")
+      local keymap = vim.keymap
+
+      keymap.set("n", "<leader>pf", builtin.find_files, {})
+      keymap.set("n", "<C-p>", builtin.git_files, {})
+      keymap.set("n", "<leader>ps", function()
         builtin.grep_string({ search = vim.fn.input("Grep > ") })
       end)
-      vim.keymap.set("n", "<leader>vh", builtin.help_tags, {})
+      keymap.set("n", "<leader>vh", builtin.help_tags, {})
+
+      keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
+      keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
+      keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
+      keymap.set("n", "<leader>ss", "<cmd>Telescope current_buffer_fuzzy_find<cr>") -- list available help tags
+      keymap.set("n", "<leader>sS", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
+      keymap.set("n", "<leader>sp", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
+      keymap.set("n", "<leader>fr", "<cmd>Telescope oldfiles<cr>") -- list available help tags
+      keymap.set("n", "<leader>'", "<cmd>Telescope resume<cr>") -- Last telescope results.
+
+      keymap.set("n", "<leader>gc", "<cmd>Telescope git_commits<cr>")
+      keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>")
+      keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>")
+      keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>")
     end,
   },
 }
