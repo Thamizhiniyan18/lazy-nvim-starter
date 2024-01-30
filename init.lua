@@ -1,7 +1,8 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
 
--- if vim.g.neovide then
---   vim.opt.guifont = { "Berkeley Mono", ":h24" }
---   vim.cmd("colorscheme deviuspro")
--- end
+-- use a gui font when running in gui
+if vim.g.neovide then
+  vim.opt.guifont = { "Berkeley Mono", ":h20" }
+  vim.cmd("colorscheme deviuspro")
+end

@@ -24,20 +24,6 @@ return {
     opts = { use_diagnostic_signs = true },
   },
 
-  -- disable trouble
-  -- { "folke/trouble.nvim", enabled = false },
-
-  -- override nvim-cmp and add cmp-emoji
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      local cmp = require("cmp")
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
-    end,
-  },
-
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -50,7 +36,7 @@ return {
         end)
       end,
     },
-    ---@class PluginLspOpts
+
     opts = {
       ---@type lspconfig.options
       servers = {
@@ -155,15 +141,6 @@ return {
     },
   },
 
-  -- Use <tab> for completion and snippets (supertab)
-  -- first: disable default <tab> and <s-tab> behavior in LuaSnip
-  {
-    "L3MON4D3/LuaSnip",
-    keys = function()
-      return {}
-    end,
-  },
-
   -- then: setup supertab in cmp
   {
     "hrsh7th/nvim-cmp",
@@ -205,6 +182,8 @@ return {
           end
         end, { "i", "s" }),
       })
+
+      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
     end,
   },
 }
