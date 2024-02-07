@@ -19,6 +19,8 @@ return {
       "yaml",
       "ruby",
       "go",
+      "rust",
+      "jsonnet",
     })
   end,
 }

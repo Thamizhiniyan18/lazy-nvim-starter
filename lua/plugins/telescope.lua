@@ -13,6 +13,9 @@ return {
           require("telescope").load_extension("fzf")
         end,
       },
+      {
+        "nvim-telescope/telescope-file-browser.nvim",
+      },
     },
 
     keys = {
@@ -115,6 +118,7 @@ return {
 
       telescope.setup(opts)
       telescope.load_extension("project")
+      telescope.load_extension("file_browser")
 
       local builtin = require("telescope.builtin")
       local keymap = vim.keymap
@@ -139,6 +143,7 @@ return {
       keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>")
       keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>")
       keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>")
+      keymap.set("n", "<leader>fb", ":Telescope file_browser path=%:p:h select_buffer=true<CR>", { noremap = true })
     end,
   },
 }
