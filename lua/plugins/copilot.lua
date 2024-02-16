@@ -20,6 +20,7 @@ return {
       rust = true,
       html = true,
       c = true,
+      ruby = true,
       cpp = true,
       java = true,
       javascript = true,

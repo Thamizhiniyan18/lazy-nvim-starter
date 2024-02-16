@@ -6,6 +6,9 @@ return {
       "shellcheck",
       "shfmt",
       "flake8",
+      "goimports",
+      "gopls",
+      "json-lsp",
     },
   },
 }
