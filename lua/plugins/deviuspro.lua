@@ -1,5 +1,0 @@
-return {
-  {
-    "DeviusVim/deviuspro.nvim",
-  },
-}

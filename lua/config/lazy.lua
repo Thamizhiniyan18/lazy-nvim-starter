@@ -12,18 +12,14 @@ require("lazy").setup({
     {
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
-      config = function()
-        if vim.g.neovide then
-          vim.opt.guifont = { "Berkeley Mono", ":h24" }
-          vim.cmd("colorscheme deviuspro")
-        end
-      end,
+
+      opts = {
+        colorscheme = "ayu",
+      },
     },
     -- import any extras modules here
     { import = "lazyvim.plugins.extras.lang.typescript" },
     { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    -- import/override with your plugins
     { import = "plugins" },
   },
 
