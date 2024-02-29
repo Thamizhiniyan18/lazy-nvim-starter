@@ -5,6 +5,6 @@ return {
     execution_message = {
       message = nil,
     },
-    debounce_delay = 3000, -- saves the file at most every `debounce_delay` milliseconds
+    debounce_delay = 9000, -- saves the file at most every `debounce_delay` milliseconds
   },
 }

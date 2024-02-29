@@ -22,8 +22,4 @@ return {
       require("ayu").colorscheme()
     end,
   },
-  { "rebelot/kanagawa.nvim" },
-  { "Mofiqul/vscode.nvim" },
-  { "projekt0n/github-nvim-theme" },
-  { "bluz71/vim-moonfly-colors" },
 }
