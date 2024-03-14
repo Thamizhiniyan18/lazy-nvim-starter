@@ -3,6 +3,45 @@ return {
     "DeviusVim/deviuspro.nvim",
   },
   {
+    "rebelot/kanagawa.nvim",
+  },
+  {
+    "ayu-theme/ayu-vim",
+  },
+  {
+    "craftzdog/solarized-osaka.nvim",
+  },
+  {
+    "nyoom-engineering/oxocarbon.nvim",
+  },
+  {
+    "mcchrish/zenbones.nvim",
+  },
+  {
+    "aktersnurra/no-clown-fiesta.nvim",
+  },
+  {
+    "olivercederborg/poimandres.nvim",
+  },
+  {
+    "cseelus/vim-colors-lucid",
+  },
+  {
+    "Domeee/mosel.nvim",
+  },
+  {
+    "xero/miasma.nvim",
+  },
+  {
+    "lifepillar/vim-wwdc16-theme",
+  },
+  {
+    "pineapplegiant/spaceduck",
+  },
+  {
+    "everblush/nvim",
+  },
+  {
     "Shatur/neovim-ayu",
     lazy = false,
     config = function()
@@ -18,8 +57,6 @@ return {
           return { Comment = { fg = colors.comment } }
         end,
       })
-
-      require("ayu").colorscheme()
     end,
   },
 }
