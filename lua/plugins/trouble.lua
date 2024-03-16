@@ -1,3 +1,4 @@
+-- plugin makes it easier to navigate with issues found in projects
 return {
   {
     "folke/trouble.nvim",

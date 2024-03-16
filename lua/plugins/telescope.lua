@@ -119,6 +119,7 @@ return {
       telescope.setup(opts)
       telescope.load_extension("project")
       telescope.load_extension("file_browser")
+      telescope.load_extension("noice")
 
       local builtin = require("telescope.builtin")
       local keymap = vim.keymap

@@ -9,6 +9,8 @@ return {
       "goimports",
       "gopls",
       "json-lsp",
+      "rust-analyzer",
+      "clangd",
     },
   },
 }
