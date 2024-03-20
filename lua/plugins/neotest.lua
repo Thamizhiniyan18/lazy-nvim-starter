@@ -1,5 +1,8 @@
 return {
   {
+    "nvim-neotest/nvim-nio",
+  },
+  {
     "nvim-neotest/neotest",
     dependencies = {
       "haydenmeade/neotest-jest",
