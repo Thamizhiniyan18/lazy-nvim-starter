@@ -6,10 +6,28 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-telescope/telescope.nvim",
   },
+  keys = {
+    {
+      "<leader>aa",
+      "<cmd>ChatGPT<CR>",
+      desc = "ChatGPT",
+    },
+    {
+      "<leader>ae",
+      "<cmd>ChatGPTEditWithInstruction<CR>",
+      desc = "Edit with instructions",
+      mode = { "n", "v" },
+    },
+    {
+      "<leader>ac",
+      "<cmd>ChatGPTCompleteCode<CR>",
+      desc = "Complete Code",
+      mode = { "n", "v" },
+    },
+  },
   config = function()
     require("chatgpt").setup({
       openai_params = {
-        -- old model: gpt-3.5-turbo
         model = "gpt-4-0125-preview",
         frequency_penalty = 0,
         presence_penalty = 0,
