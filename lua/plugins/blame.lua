@@ -3,10 +3,14 @@ return {
   {
     "FabijanZulj/blame.nvim",
     keys = {
-      { "<leader>gb", "<cmd>ToggleBlame virtual<cr>", desc = "Git Blame (virtual mode)" },
-      { "<leader>gB", "<cmd>ToggleBlame window<cr>", desc = "Git Blame (window mode)" },
+      { "<leader>gb", "<cmd>BlameToggle virtual<cr>", desc = "Git Blame (virtual mode)" },
+      { "<leader>gB", "<cmd>BlameToggle window<cr>", desc = "Git Blame (window mode)" },
     },
+    config = function()
+      require("blame").setup({})
+    end,
   },
+
   -- adds blame details to current line, copy file address, etc
   {
     "f-person/git-blame.nvim",
@@ -15,5 +19,10 @@ return {
       { "<leader>gof", "<cmd>GitBlameOpenFileURL<cr>", desc = "Open Remote Repo @ main" },
       { "<leader>goc", "<cmd>GitBlameOpenCommitURL<cr>", desc = "Open Commit Changing Line" },
     },
+    config = function()
+      require("gitblame").setup({
+        enabled = false,
+      })
+    end,
   },
 }
