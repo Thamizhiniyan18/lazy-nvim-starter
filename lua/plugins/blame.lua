@@ -16,7 +16,7 @@ return {
     "f-person/git-blame.nvim",
     event = "VeryLazy",
     keys = {
-      { "<leader>gof", "<cmd>GitBlameOpenFileURL<cr>", desc = "Open Remote Repo @ main" },
+      { "<leader>gor", "<cmd>GitBlameOpenFileURL<cr>", desc = "Open Remote @ main" },
       { "<leader>goc", "<cmd>GitBlameOpenCommitURL<cr>", desc = "Open Commit Changing Line" },
     },
     config = function()
