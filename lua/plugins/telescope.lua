@@ -34,6 +34,11 @@ return {
       local actions = require("telescope.actions")
 
       local opts = {
+        pickers = {
+          colorscheme = {
+            enable_preview = true,
+          },
+        },
         defaults = {
           vimgrep_arguments = {
             "rg",
