@@ -6,6 +6,26 @@ return {
     "rebelot/kanagawa.nvim",
   },
   {
+    "nyoom-engineering/nyoom.nvim",
+  },
+  {
+    "jacoborus/tender.vim",
+  },
+  {
+    "savq/melange-nvim",
+  },
+  {
+    "ramojus/mellifluous.nvim",
+    config = function()
+      require("mellifluous").setup({
+        color_set = "kanagawa_dragon",
+        styles = {
+          comments = { italic = false },
+        },
+      })
+    end,
+  },
+  {
     "ayu-theme/ayu-vim",
   },
   {
@@ -13,6 +33,10 @@ return {
   },
   {
     "nyoom-engineering/oxocarbon.nvim",
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
   },
   {
     "mcchrish/zenbones.nvim",

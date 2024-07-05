@@ -14,7 +14,7 @@ require("lazy").setup({
       import = "lazyvim.plugins",
 
       opts = {
-        colorscheme = "neobones",
+        colorscheme = "mellifluous",
       },
     },
 
